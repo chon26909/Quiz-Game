@@ -1,10 +1,13 @@
-import './App.css';
+import MainPage from './pages/MainPage';
+import EndGame from './pages/EndGamePage';
+import StartGame from './pages/StartGamePage';
+import FetchingPage from './pages/FetchingPage';
 
 function App() {
   return (
-    <div className="App">
-     
-    </div>
+    <>
+  
+    </>
   );
 }
 

@@ -1,12 +1,10 @@
-import MainPage from './pages/MainPage';
-import EndGame from './pages/EndGamePage';
-import StartGame from './pages/StartGamePage';
-import FetchingPage from './pages/FetchingPage';
+import React from "react";
+import MainPage from "./pages/MainPage";
 
 function App() {
   return (
     <>
-  
+      <MainPage />
     </>
   );
 }

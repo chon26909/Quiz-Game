@@ -1,3 +1,4 @@
 import { combineReducers } from 'redux';
+import gameState from './slices/gameinit';
 
-export default combineReducers({});
+export default combineReducers({gameState});

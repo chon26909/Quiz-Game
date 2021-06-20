@@ -21,6 +21,9 @@ const gameState = createSlice({
         },
         finishGame(state) {
             state.stage = stages.END_GAME
+        },
+        restartGame(state) {
+            state.stage = stages.START_GAME
         }
     },
     extraReducers: (builder) => {

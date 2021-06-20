@@ -3,19 +3,19 @@ import { useDispatch } from "react-redux";
 import { startGame } from "../store/slices/gameinit";
 
 const StartGamePage = () => {
-  const username = useRef("");
+  const _username = useRef("");
   const dispatch = useDispatch();
 
   const startGameHandle = (e) => {
     e.preventDefault();
-    const user_name = username.current.value;
-    dispatch(startGame({ user_name }));
+    const username = _username.current.value;
+    dispatch(startGame({ username }));
   };
 
   return (
     <div>
       <form onSubmit={startGameHandle}>
-        <input type="text" placeholder="ชื่อของคุณ" ref={username} />
+        <input type="text" placeholder="ชื่อของคุณ" ref={_username} />
         <button type="submit">เริ่มเกม</button>
       </form>
     </div>
@@ -23,3 +23,4 @@ const StartGamePage = () => {
 };
 
 export default StartGamePage;
+

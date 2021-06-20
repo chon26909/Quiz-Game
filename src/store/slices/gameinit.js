@@ -12,13 +12,14 @@ const gameState = createSlice({
     initialState,
     reducers: { 
         startGame(state, action) {
+            console.log(action);
             state.username = action.payload.username;
             state.stage = stages.FETCHING_GAME;
         },
-        cancelGame(state, action) {
+        cancelGame(state) {
             state.stage = stages.START_GAME
         },
-        finishGame(state, action) {
+        finishGame(state) {
             state.stage = stages.END_GAME
         }
     },

@@ -1,4 +1,4 @@
-import { take, fork, put, call, delay } from 'redux-saga/effects';
+import { take, fork, put, call, delay, cancel } from 'redux-saga/effects';
 import { cancelGame, startGame } from '../slices/gameinit';
 import { fetchQuizFromApi } from '../../utils/api';
 import { fetchQuestionFail,fetchQuestionsSuccess } from '../slices/game';
@@ -8,24 +8,22 @@ function* fetchQuestionSaga() {
         yield delay(1000);
         const data = yield call(fetchQuizFromApi);
         yield put(fetchQuestionsSuccess(data));
-        console.log(data);
-
     } catch (error) {
-        yield put(fetchQuestionFail("เกิดข้อผิดพลาด "))
+        yield put(fetchQuestionFail("เกิดข้อผิดพลาด"))
     }
 }
 
-function* cancelFetchQuiz(forkedSaga) {
+function* cancelFetchQuiz() {
     while(true) {
         yield take(cancelGame.type);
-        yield cancel(forkedSaga);
+        yield cancel(fetchQuizFromApi);
     }
 }
 
 export default function* stateGameSaga() {
     while(true) {
         yield take(startGame.type);
-        const forksaga = yield fork(fetchQuestionSaga);
-        yield fork(cancelFetchQuiz, forkedSaga)
+        const fetch = yield fork(fetchQuestionSaga);
+        yield fork(cancelFetchQuiz, fetch)
     }
 }

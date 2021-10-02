@@ -13,7 +13,7 @@ const StartGamePage = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center mt-52">
+    <div className="flex flex-col justify-center items-center mt-60">
       <form onSubmit={startGameHandle}>
         <input
           type="text"

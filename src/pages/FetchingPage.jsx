@@ -6,13 +6,13 @@ const FetchingPage = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex flex-col justify-center items-center mt-80">
-      <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mb-12">
-        <div className="w-12 h12 bg-purple-200 rounded-full animate-bounce"></div>
+    <div className="flex flex-col justify-center items-center mt-52">
+      <div className="w-32 h-32 bg-purple-500 rounded-full flex items-center justify-center mb-12">
+        <div className="w-16 h-16 bg-purple-200 rounded-full animate-bounce p-2"></div>
       </div>
       <div>
         <button
-          className="bg-purple-500 hover:bg-purple-700 focus:outline-none py-2 px-6 text-white shadow rounded"
+          className="text-purple-500 hover:bg-purple-500 hover:text-white focus:outline-none rounded py-2 px-6 text-lg"
           onClick={() => dispatch(cancelGame())}
         >
           ยกเลิก

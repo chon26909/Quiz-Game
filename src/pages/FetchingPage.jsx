@@ -1,17 +1,25 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { cancelGame } from '../store/slices/gameinit';
+import React from "react";
+import { useDispatch } from "react-redux";
+import { cancelGame } from "../store/slices/gameinit";
 
 const FetchingPage = () => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
+  return (
+    <div className="flex flex-col justify-center items-center mt-80">
+      <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mb-12">
+        <div className="w-12 h12 bg-purple-200 rounded-full animate-bounce"></div>
+      </div>
+      <div>
+        <button
+          className="bg-purple-500 hover:bg-purple-700 focus:outline-none py-2 px-6 text-white shadow rounded"
+          onClick={() => dispatch(cancelGame())}
+        >
+          ยกเลิก
+        </button>
+      </div>
+    </div>
+  );
+};
 
-    return (
-        <div>
-            <p>Loading...</p>
-            <button onClick={() => dispatch(cancelGame())}>Cancel</button>
-        </div>
-    )
-}
-
-export default FetchingPage
+export default FetchingPage;

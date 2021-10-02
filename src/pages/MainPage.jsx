@@ -34,7 +34,11 @@ const MainPage = () => {
       break;
   }
 
-  return <>{displayedPage}</>;
+  return <div className="font-mono bg-purple-50 min-h-screen">
+    <h1 className="bg-purple-500 text-center p-4 text-2xl text-white">QUIZ GAME</h1>
+    {displayedPage}
+    
+    </div>;
 };
 
 export default MainPage;

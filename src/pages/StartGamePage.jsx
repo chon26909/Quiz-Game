@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { startGame } from "../store/slices/gameinit";
 
@@ -13,14 +13,25 @@ const StartGamePage = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center mt-52">
       <form onSubmit={startGameHandle}>
-        <input type="text" placeholder="ชื่อของคุณ" ref={_username} />
-        <button type="submit">เริ่มเกม</button>
+        <input
+          type="text"
+          className="py-3 px-4 outline-none rounded shadow w-80 mb-6"
+          placeholder="ชื่อของคุณ"
+          ref={_username}
+        />
+        <div className="flex justify-center">
+          <button
+            className="bg-purple-500 hover:bg-purple-700 focus:outline-none py-2 px-6 text-white shadow rounded"
+            type="submit"
+          >
+            เริ่มเกม
+          </button>
+        </div>
       </form>
     </div>
   );
 };
 
 export default StartGamePage;
-
